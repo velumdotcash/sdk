@@ -1,0 +1,64 @@
+{
+  "name": "@velumdotcash/sdk",
+  "version": "2.3.1",
+  "description": "TypeScript SDK for private payments on Solana using Zero-Knowledge proofs",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./utils": "./dist/exportUtils.js"
+  },
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run --exclude \"**/__tests__/e2e.test.ts\" --exclude \"**/__tests__/e2espl.test.ts\" --exclude \"**/test_paylink_logic.test.ts\"",
+    "teste2e": "vitest run e2e.test.ts",
+    "teste2espl": "vitest run e2espl.test.ts"
+  },
+  "keywords": ["solana", "privacy", "zk-proofs", "payments", "sdk"],
+  "author": "Velum",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/velumdotcash/sdk.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@ethersproject/keccak256": "^5.8.0",
+    "@ethersproject/sha2": "^5.8.0",
+    "@lightprotocol/hasher.rs": "^0.2.1",
+    "@noble/ciphers": "^1.2.1",
+    "@noble/hashes": "^1.8.0",
+    "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.4",
+    "@types/bn.js": "^5.2.0",
+    "@types/snarkjs": "^0.7.9",
+    "bn.js": "^5.2.2",
+    "borsh": "^2.0.0",
+    "bs58": "^6.0.0",
+    "dotenv": "^17.2.2",
+    "ethers": "^6.15.0",
+    "ffjavascript": "^0.3.1",
+    "snarkjs": "^0.7.5",
+    "tmp-promise": "^3.0.3",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.5",
+    "@types/node": "^24.3.0",
+    "@types/snarkjs": "^0.7.9",
+    "@types/tmp": "^0.2.6",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
